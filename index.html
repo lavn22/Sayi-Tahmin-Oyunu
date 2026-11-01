@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayı Tahmin Oyunu</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <img id="logo" src="logo.png" alt="logo">
+        <h1>Sayı Tahmin Oyunu</h1> 
+    </header>
+    <main>
+        <div id="secimEkrani">
+            <p>Hoşgeldiniz!</p>
+            <p>Zorluk Seviyesini Seçiniz</p>
+            <div class="mod">
+                <button class="mod-btn" onclick="zorlukSec('kolay')">
+                    <span>Kolay</span>
+                    <small>1-50 arası</small>
+                    <small>7 Hak | 60 Saniye</small>
+                </button>
+                <button class="mod-btn" onclick="zorlukSec('orta')">
+                    <span>Orta</span>
+                    <small>1-100 arası</small>
+                    <small>7 Hak | 45 Saniye</small>
+                </button>
+                <button class="mod-btn" onclick="zorlukSec('zor')">
+                    <span>Zor</span>
+                    <small>1-400 arası</small>
+                    <small>8 Hak | 30 Saniye</small>
+                </button>
+            </div>    
+        </div>
+        <div id="oyunEkrani" style="display: none;">
+            <div id="durumCubugu">
+                <b>Zorluk:</b><span id="zorluk"></span>
+                <b>Hak:</b><span id="hak"> </span>
+                <b>En Yüksek Skor:</b><span id="eYuksekSkor"> </span>
+                <b>Süre:</b><span id="sure"> </span><br>
+            </div>
+            <div id="mesajlar">
+
+            </div>
+            <input type="text" id="tahminInput" onkeydown="if(event.key==='Enter') tahminEt()">
+            <button id="btnTahmin" onclick="tahminEt()" >Tahmin Et</button>
+            <button id="tekrarOyna" onclick="tekrarOyna()" >Tekrar Oyna</button>
+        </div>
+        <div id="skor">
+            <b>En Yüksek Skor:</b><span id="enYuksekSkor"> </span>
+        </div>
+        
+    </main>
+
+    <script src="js.js"></script>
+
+</body>
+</html>
